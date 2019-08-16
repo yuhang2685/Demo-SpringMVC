@@ -4,7 +4,7 @@ Dr. YUHANG ZHAO
 Introduction:
 This demo intends to supply a quick-start template with commented explanation for Spring MVC projects.
 
-Work Flow (Big Picture):
+Big Picture:
 - index.jsp is the start page of the web site where it has access to requesting for web service;
 - web.xml specifies servlets information including name, type and url-pattern for handling requests;
 - dispatch-servlet.xml has the file name begin with the servlet name specified in web.xml. 
