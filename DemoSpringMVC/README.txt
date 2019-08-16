@@ -15,8 +15,9 @@ Work Flow (Big Picture):
   according to the principle that business logic (MODEL) should be separated from CONTROLLER;
 - displayResult.jsp is the VIEW to show result;
 - pom.xml contains project dependencies which are jar files integrated by Maven;
-Alternative approach to replace configuration by web.xml/dispatch-servlet is 
-to use annotation configuration by java files MyWebInitializer.java and DispatchConfig.java: 
+An alternative approach is called annotation configuration. 
+It replaces the configuration in web.xml/dispatch-servlet 
+by java files MyWebInitializer.java and DispatchConfig.java: 
 - MyWebInitializer.java replaces web.xml;
 - DispatchConfig.java replaces dispatch-servlet.xml;
 
@@ -28,3 +29,6 @@ System Configuration:
 - Eclipse 4.12.0
 - Apache Tomcat v9.0
 - Spring-webmvc 4.1.8.RELEASE
+
+Reference: "Spring MVC Tutorial | Full Course" by Telusko. 
+https://www.youtube.com/watch?v=g2b-NbR48Johttps://www.youtube.com/watch?v=g2b-NbR48Jo
