@@ -24,7 +24,7 @@ it generates `HTML` output that the client's browser can interpret.
 and building an appropriate model and passes it to the view for rendering.
 
 #### DispatcherServlet
-![DispatcherServlet](https://github.com/yuhang2685/Demo-SpringBoot-WebApp/blob/master/spring_dispatcherservlet.png)
+![DispatcherServlet](https://github.com/yuhang2685/Demo-SpringMVC/blob/master/spring_dispatcherservlet.png)
 
 - After receiving an `HTTP` request, `DispatcherServlet` consults the `HandlerMapping` to call the appropriate `Controller`.
 
@@ -33,26 +33,43 @@ The `service` method will set `model` data based on defined business logic and r
 
 - The `DispatcherServlet` will take help from `ViewResolver` to pickup the defined view for the request.
 
-- Once view is finalized, The `DispatcherServlet` passes the `model` data to the `view` which is finally rendered on the browser.
+- Once view is finalized, the `DispatcherServlet` passes the `model` data to the `view` which is finally rendered on the browser.
 
 ### Working Mechanism
-- `pom.xml` contains project dependencies, which are `jar` files integrated by `Maven`;
-- `index.jsp` is the start page of the web site where it has triggers to requests for web services;
-- Through the annotation `@RequestParam` we obtain the user input parameters;
-- `web.xml` specifies servlets information including names, types and url-patterns;
+- `pom.xml` contains project dependencies, which are `jar` files integrated by `Maven`.
+
+- `index.jsp` is the start page of the web site where it has triggers to requests for web services.
+
+- Through the annotation `@RequestParam` we obtain the user input parameters.
+
+- `web.xml` (must reside in `Webapp/WEB-INF` directory ) uses a `URL` mapping to specify `servlets` information including names, types and url-patterns.
+
 - `dispatch-servlet.xml` has the file name begin with the servlet name specified in `web.xml`. 
-  The file contains the online schema for servlet and the package names where the `CONTROLLERs` are located;
+  The file contains the online schema for servlet and the package names where the `CONTROLLERs` are located.
+  
+- `@Controller` annotation indicates that a particular class serves the role of a controller.
+
+- `@RequestMapping` annotation is used to map a `URL` to either an entire class or a particular handler method.
+
 - `MathController.java` (`CONTROLLER`) contains the methods annotated by `@RequestMapping` 
-  to handle the particular requests by calling the corresponding services in `MODEL`;
-- Using "ModelAndView" we pass the specific data to the specific view;
+  to handle the particular requests by calling the corresponding services in `MODEL`.
+  
+- Using `ModelAndView` we pass the specific data to the specific `view`.
+
 - `MathService.java` (`MODEL`) supplies the service (computation), according to the principle that 
-  the business logic should be separated from `CONTROLLER` and located in `MODEL`;
+  the business logic should be separated from `CONTROLLER` and located in `MODEL`.
+  
 - `displayResult.jsp` (`VIEW`) displays the result of request using "Expression Language(EL)".
 
 An alternative approach is called "Annotation Configuration". 
 It replaces the configuration in `XML` (`web.xml` and `dispatch-servlet.xml`) by java classes (`MyWebInitializer.java` and `DispatchConfig.java`): 
 - `MyWebInitializer.java` is corresponding to `web.xml`;
 - `DispatchConfig.java` is corresponding to `dispatch-servlet.xml`;
+
+
+### Related Projects
+[Demo-SpringBoot-WebApp](https://github.com/yuhang2685/Demo-SpringBoot-WebApp)
+
 
 ### System Configuration:
 - Windows 7
